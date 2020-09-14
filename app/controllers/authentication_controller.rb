@@ -2,7 +2,6 @@ class AuthenticationController < ApplicationController
   
   def create
     user = User.find_by(username: params[:username])
-    # debugger
     if user && user.authenticate(params[:password])
       render json: {
         jwt: encode_token({
@@ -11,8 +10,7 @@ class AuthenticationController < ApplicationController
         })
       }
     else
-      head :not_found
-      render json: {message: 'No username found!'}
+      render json: {message: 'username or passworword invalid!'}
     end
   end
 
