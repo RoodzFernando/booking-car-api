@@ -2,26 +2,25 @@ class AuthenticationController < ApplicationController
   
   def create
     user = User.find_by(username: params[:username])
-    # debugger
-    if user && user.authenticate(params[:password])
-      render json: {
-        jwt: encode_token({
-          id: user.id,
+  
+  if !user 
+    render json: {message: 'user not exist. Please register!'}, status: :unauthorized
+  else
+    if user.authenticate(params[:password])
+      secret_key = Rails.application.secrets.secret_key_base
+      token = JWT.encode(
+        {
+          user_id: user.id,
           username: user.username
-        }),
-        message: "success"
+        }, secret_key)
+      render json: {
+        token: token
       }
     else
-      render json: {message: 'username or password invalid!'}
+      render json: {message: 'password incorrect'}, status: :unauthorized
     end
   end
 
-  private
-
-  def encode_token(payload={})
-    exp = 24.hours.from_now
-    payload[:exp] = exp.to_i
-    JWT.encode(payload, Rails.application.secrets.secret_key_base, 'HS256')
-  end
+end
 
 end

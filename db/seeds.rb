@@ -1,6 +1,6 @@
 makes = %w[Audi Tesla BMW Buick Chevrolet Dodge Ford Ford Toyota Infiniti Lincoln Subaru ]
 
-models = %w[A3 Model3 X2 Enclave Colorado Grand Caravan Edge Ranger Rav4 QX50 Navigator Forester]
+models = %w[A3 Model3 X2 Enclave Colorado Grand\ Caravan Edge Ranger Rav4 QX50 Navigator Forester]
 
 year = 2020
 
@@ -83,7 +83,7 @@ motors = [
   Car.create(
       make: makes[i], 
       model: models[i],
-      mdel_year: year,
+      model_year: year,
       image_url: imgs[i],
       price: prices[i],
       consommation: consommations[i],

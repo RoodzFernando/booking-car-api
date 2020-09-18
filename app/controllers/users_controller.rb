@@ -12,7 +12,13 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save 
-      render json: {data: user}
+      render json: {
+        jwt: encode_token({
+          id: user.id,
+          username: user.username
+        }),
+        message: "success"
+      }
     else
       render json: {message: 'user not created successfully'}
     end

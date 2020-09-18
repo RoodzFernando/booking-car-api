@@ -1,3 +1,7 @@
 class Car < ApplicationRecord
-  belongs_to :appointment
+   before_create :slugify
+
+  def slugify
+    self.slug = "#{make}-#{model.parameterize}"
+  end
 end
