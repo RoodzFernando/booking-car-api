@@ -2,6 +2,21 @@ makes = %w[Audi Tesla BMW Buick Chevrolet Dodge Ford Ford Toyota Infiniti Lincol
 
 models = %w[A3 Model3 X2 Enclave Colorado Grand\ Caravan Edge Ranger Rav4 QX50 Navigator Forester]
 
+descriptions = [
+              'The small A3, still offered in sedan and convertible formats as well as with front-wheel drive or all-wheel drive, not to mention S3 and RS 3 performance versions developing 288 and 394 horsepower, is in its final revolutions in its current form.',
+              'The Model 3 shines with its performance and high level of sophistication. In addition to a basic version with a range of barely 150 kilometers, you can get the Standard Plus version that can travel up to 402 km on a full charge.',
+              'The X2 has a sportier appearance with its lowered roofline and four-door coupe looks. Several shades of leather are available, as are wood or aluminum wall lights, as well as a panoramic roof.',
+              ' A monochrome Sport Touring package helps elevate the Enclave\'s look. A few technologies are emerging, such as HD peripheral vision cameras and a next-generation infotainment system with an eight-inch touchscreen. A front seat lumbar massage function is now available.',
+              'Chevrolet ditched the manual transmission with its mid-size pickup, but kept the six- and eight-speed automatics. Three engines are still on the program, including a four-cylinder turbodiesel that wows with its torque of 369 lb-ft.',
+              'The days of the Grand Caravan are numbered, as Chrysler prepares to launch the Voyager, a more affordable minivan than the Pacifica. It therefore hardly changes for 2020, apart from a few revisions to the equipment of the SXT version, such as Super Stow \'n Go seats now included as standard in the second row.',
+              ' It includes the Ford Co-Pilot360 security suite and the FordPass Connect wireless modem as standard. As for performance, you\'ll be able to tow up to 3,500 pounds with the 250-horsepower four-cylinder turbocharged engine as well as the Edge ST\'s 335-horsepower twin-turbo V6.',
+              'The Ranger operates a turbocharged 2.3-liter four-cylinder engine that generates 270 horsepower and 310 pound-feet of torque. It comes exclusively with a ten-speed automatic transmission and four-wheel drive.',
+              'On the menu: a more robust appearance, but also increased ground clearance as well as suspension, tires and other components specifically adapted for use on the trails. While waiting for the 2021 rechargeable RAV4, you have to choose between a gasoline engine and a hybrid system.',
+              'The QX50 breaks new ground with the first production variable compression engine on the market. The latter provides power and fuel economy, with 268 horsepower managed by a continuously variable automatic transmission.',
+              'The next-generation Navigator is one of the best full-size luxury SUVs around. It doesn\'t really change this year. On the menu: a twin-turbo V6 that generates 450 horsepower and can pull maximum loads of 8,300 pounds, 22-inch wheels, a panoramic roof and plenty of room for passengers and their luggage (even more in the extended wheelbase version).',
+              'A year after its complete overhaul, the Forester receives a few changes, starting with the EyeSight safety system which is now included as standard in all versions. A new device triggers an audible and visual warning to prompt the driver to check the rear seat before exiting, while the Convenience version includes automatic braking in reverse.'
+            ]
+
 year = 2020
 
 imgs = %w[
@@ -83,6 +98,7 @@ motors = [
   Car.create(
       make: makes[i], 
       model: models[i],
+      description: descriptions[i],
       model_year: year,
       image_url: imgs[i],
       price: prices[i],

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_190523) do
     t.string "image_url"
     t.string "price"
     t.string "consommation"
+    t.string "description"
     t.string "power"
     t.string "motor"
     t.string "slug"
