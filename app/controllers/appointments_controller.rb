@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
     render json: {data: appointments}
   end
 
-   def create
+  def create
     appointment = Appointment.create(
       date: params[:date],
       city: params[:city],
