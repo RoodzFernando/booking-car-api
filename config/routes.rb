@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :appointments, only: [:index, :create]
+  resources :appointments, only: [:show, :create]
   resources :cars, only: [:index, :show]
   post 'login', to: 'authentication#create'
 end

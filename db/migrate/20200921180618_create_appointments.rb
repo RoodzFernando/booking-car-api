@@ -3,8 +3,8 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
     create_table :appointments do |t|
       t.string :city
       t.string :date
-      t.belongs_to :user, null: false, foreign_key: true
-      t.belongs_to :car, null: false, foreign_key: true
+      t.references :user, index: false, foreign_key: true
+      t.references :car, index: false, foreign_key: true
 
       t.timestamps
     end
