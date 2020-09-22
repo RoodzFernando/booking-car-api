@@ -12,6 +12,7 @@ class AppointmentsController < ApplicationController
       car_id: params[:car_id],
       user: @user
     )
+    # debugger
     if appointment.save 
       render json: {data: appointment}
     else
