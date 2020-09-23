@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/LineLength
+
+# rubocop:disable Metrics/AbcSize
+
+# rubocop:disable Style/IfInsideElse
+
+# rubocop:disable Metrics/MethodLength
+
+# authentication_controller
 class AuthenticationController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
@@ -22,5 +31,13 @@ class AuthenticationController < ApplicationController
         render json: { message: 'password incorrect' }, status: :unauthorized
       end
     end
+  end
 end
-end
+
+# rubocop:enable Metrics/LineLength
+
+# rubocop:enable Metrics/MethodLength
+
+# rubocop:enable Metrics/AbcSize
+
+# rubocop:enable Style/IfInsideElse

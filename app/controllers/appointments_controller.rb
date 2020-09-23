@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/MethodLength
+
+# appointments_controller
 class AppointmentsController < ApplicationController
   before_action :token_validity, only: :create
   def show
@@ -12,7 +15,7 @@ class AppointmentsController < ApplicationController
 
     appointments = ActiveRecord::Base.connection.execute(query)
     render json: { data: appointments }
- end
+  end
 
   def create
     appointment = Appointment.create(
@@ -34,3 +37,4 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:date, :city, :car_id, @user)
   end
 end
+# rubocop:enable Metrics/MethodLength

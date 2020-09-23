@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# exception_handler
 module ExceptionHandler
   extend ActiveSupport::Concern
   class DecodeError < StandardError; end

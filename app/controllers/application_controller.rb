@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# application_controller
 class ApplicationController < ActionController::API
   include ExceptionHandler
 

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/MethodLength
+
+# users_controller
 class UsersController < ApplicationController
   def index
     users = User.all
@@ -41,3 +44,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
+
+# rubocop:enable Metrics/MethodLength

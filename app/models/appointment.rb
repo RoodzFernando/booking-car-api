@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# appointment_model
 class Appointment < ApplicationRecord
   belongs_to :user
   belongs_to :car

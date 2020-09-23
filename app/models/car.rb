@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/LineLength
+
+# car_model
 class Car < ApplicationRecord
   before_create :slugify
   has_many :appointments
@@ -9,3 +12,5 @@ class Car < ApplicationRecord
     self.slug = "#{make}-#{model.parameterize}"
   end
 end
+
+# rubocop:enable Metrics/LineLength

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/LineLength
+
 require_relative 'boot'
 
 require 'rails'
@@ -22,6 +24,7 @@ require 'action_cable/engine'
 Bundler.require(*Rails.groups)
 
 module BookingCarApi
+  # application.rb
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
@@ -37,3 +40,5 @@ module BookingCarApi
     config.api_only = true
   end
 end
+
+# rubocop:enable Metrics/LineLength

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/MethodLength
+
+# create_cars
 class CreateCars < ActiveRecord::Migration[6.0]
   def change
     create_table :cars do |t|
@@ -18,3 +21,5 @@ class CreateCars < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+# rubocop:enable Metrics/MethodLength

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# user_model
 class User < ApplicationRecord
   before_save { username.downcase! }
   has_secure_password
