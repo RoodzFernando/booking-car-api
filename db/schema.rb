@@ -18,12 +18,10 @@ ActiveRecord::Schema.define(version: 2020_09_21_180618) do
   create_table "appointments", force: :cascade do |t|
     t.string "city"
     t.string "date"
-    t.bigint "user_id", null: false
-    t.bigint "car_id", null: false
+    t.bigint "user_id"
+    t.bigint "car_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["car_id"], name: "index_appointments_on_car_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "cars", force: :cascade do |t|
