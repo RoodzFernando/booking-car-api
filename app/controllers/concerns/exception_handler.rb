@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ExceptionHandler
   extend ActiveSupport::Concern
   class DecodeError < StandardError; end
@@ -5,12 +7,12 @@ module ExceptionHandler
   included do
     rescue_from ExceptionHandler::DecodeError do |_error|
       render json: {
-        message: "Access denied!. Invalid token supplied."
+        message: 'Access denied!. Invalid token supplied.'
       }, status: :unauthorized
     end
     rescue_from ExceptionHandler::ExpiredSignature do |_error|
       render json: {
-        message: "Access denied!. Token has expired."
+        message: 'Access denied!. Token has expired.'
       }, status: :unauthorized
     end
   end
