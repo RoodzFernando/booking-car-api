@@ -9,9 +9,4 @@ class CarsController < ApplicationController
       render json: {data: car}
   end
 
-  private
-
-  def car_params
-    params.require(:car).permit(:make, :model, :mdel_year, :image_url, :price )
-  end
 end

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::API
 
   def token_validity
     user_authorization = request.headers[:authorization]
+    # debugger
     if !user_authorization
       render json: {message: 'not authorized'}
     else
@@ -12,7 +13,6 @@ class ApplicationController < ActionController::API
       secret = Rails.application.secrets.secret_key_base
       decoded_token = JWT.decode(token, secret)[0]
       @user = User.find(decoded_token['user_id'])
-      # debugger
     end
   end
 

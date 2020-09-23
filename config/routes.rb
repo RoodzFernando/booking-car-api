@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :appointments, only: [:index, :create]
-  resources :cars, only: [:index, :show, :create]
-  # get '/signup', to: 'authentication#create'
+  resources :appointments, only: [:show, :create]
+  resources :cars, only: [:index, :show]
   post 'login', to: 'authentication#create'
 end
