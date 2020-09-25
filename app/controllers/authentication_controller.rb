@@ -2,8 +2,6 @@
 
 # rubocop:disable Metrics/LineLength
 
-# rubocop:disable Metrics/AbcSize
-
 # rubocop:disable Style/IfInsideElse
 
 # rubocop:disable Metrics/MethodLength
@@ -17,7 +15,6 @@ class AuthenticationController < ApplicationController
       render json: { message: 'user not exist. Please register!' }, status: :unauthorized
     else
       if user.authenticate(params[:password])
-        secret_key = Rails.application.secrets.secret_key_base
         token = encode_token(
           {
             user_id: user.id,
@@ -37,7 +34,5 @@ end
 # rubocop:enable Metrics/LineLength
 
 # rubocop:enable Metrics/MethodLength
-
-# rubocop:enable Metrics/AbcSize
 
 # rubocop:enable Style/IfInsideElse
