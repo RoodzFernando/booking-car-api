@@ -8,7 +8,6 @@ class ApplicationController < ActionController::API
 
   def token_validity
     user_authorization = request.headers[:authorization]
-    # debugger
     if !user_authorization
       render json: { message: 'not authorized' }
     else

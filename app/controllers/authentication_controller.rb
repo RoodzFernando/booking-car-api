@@ -18,11 +18,11 @@ class AuthenticationController < ApplicationController
     else
       if user.authenticate(params[:password])
         secret_key = Rails.application.secrets.secret_key_base
-        token = JWT.encode(
+        token = encode_token(
           {
             user_id: user.id,
             username: user.username
-          }, secret_key
+          }
         )
         render json: {
           token: token
