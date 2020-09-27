@@ -12,7 +12,7 @@ class AuthenticationController < ApplicationController
     user = User.find_by(username: params[:username])
 
     if !user
-      render json: { message: 'user not exist. Please register!' }, status: :unauthorized
+      render json: { message: 'user does not exist. Please register!' }, status: 422
     else
       if user.authenticate(params[:password])
         token = encode_token(
