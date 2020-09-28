@@ -25,7 +25,7 @@ class AuthenticationController < ApplicationController
           token: token
         }
       else
-        render json: { message: 'password incorrect' }, status: :unauthorized
+        render json: { message: 'Incorrect credentials' }, status: :unauthorized
       end
     end
   end
