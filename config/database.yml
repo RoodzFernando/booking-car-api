@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: booking_car_api_production
-  username: booking_car_api
-  password: <%= ENV['BOOKING_CAR_API_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: Z-door@engineer

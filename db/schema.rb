@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/LineLength
+# rubocop:disable Metrics/BlockLength
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,16 +15,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_034430) do
-
+ActiveRecord::Schema.define(version: 20_200_921_180_618) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'appointments', force: :cascade do |t|
+    t.string 'city'
+    t.string 'date'
+    t.bigint 'user_id'
+    t.bigint 'car_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
+  create_table 'cars', force: :cascade do |t|
+    t.string 'make'
+    t.string 'model'
+    t.string 'model_year'
+    t.string 'image_url'
+    t.string 'price'
+    t.string 'consommation'
+    t.string 'description'
+    t.string 'power'
+    t.string 'motor'
+    t.string 'slug'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.string 'password_digest'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
+
+  add_foreign_key 'appointments', 'cars'
+  add_foreign_key 'appointments', 'users'
 end
+
+# rubocop:enable Metrics/LineLength
+# rubocop:enable Metrics/BlockLength
